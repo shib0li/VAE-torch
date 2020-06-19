@@ -7,7 +7,7 @@ class MNIST():
     def __init__(self):
         self.transform = T.Compose([
             T.ToTensor(),
-            T.Normalize((0.5,),(1.0,))
+#             T.Normalize((0,),(1.0,))
         ])
         
         self.Dtrain = datasets.MNIST(root='./data', train=True, transform=self.transform, download=True)

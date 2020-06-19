@@ -24,7 +24,6 @@ class DefaultConfig(object):
     lr = 1e-3
     lr_decay = 0.5
     weight_decay = 0e-5
-    opt_steps = 10000
 
     def _parse(self, kwargs):
         for k,v in kwargs.items():

@@ -1,2 +1,1 @@
-from models.vanilla import VanillaNet
-# from models.vanillai import BasicNeuralNet
+from models.vae import VAE
