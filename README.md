@@ -1,6 +1,6 @@
 # Variational Auto-encoder with PyTorch
 
-This is a light implementation of the [_Variational Auto-encoder(VAE)_](https://arxiv.org/abs/1606.05908) with [_PyTorch_](https://pytorch.org/) and tested on [_MNIST_](http://yann.lecun.com/exdb/mnist/) dataset. 
+This is a light implementation of the [_Variational Auto-encoder(VAE)_](https://arxiv.org/abs/1312.6114) with [_PyTorch_](https://pytorch.org/) and tested on [_MNIST_](http://yann.lecun.com/exdb/mnist/) dataset. 
 
 ## System Requirement
 
