@@ -14,5 +14,8 @@ See the Demo.ipynb to find the running configuration options in details.
 
 The first experiment conducted is to test the images reconstruction. A batch of 64 images are drawn from the testing dataset, first pass to the encoder to acquire their latent encodings, then pass to the decoder to see if the VAE could recover the original images properly.
 
-* ground truth from testing
+### ground truth of testing
 ![ground_truth](https://github.com/shib0li/VAE-torch/blob/master/figures/ground.png)
+
+### reconstruction from decoder of testing
+![ground_truth](https://github.com/shib0li/VAE-torch/blob/master/figures/recover.png)
