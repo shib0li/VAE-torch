@@ -5,8 +5,8 @@ class DefaultConfig(object):
 
     # default model
     model = 'VAE'
-    encoder_hidden_width = 512
-    decoder_hidden_width = 512
+    encoder_hidden_width = 1024
+    decoder_hidden_width = 1024
     latent_dim = 256 # size of latent vector
     in_d = 28*28
     

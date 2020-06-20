@@ -14,6 +14,7 @@ class VAE:
         # device
         self.name = 'VAE'
         self.device = device
+        self.latent_dim = latent_dim
         
         # initialize encoder/decoder weights and biases
         self.weights, self.biases = self.init_vae_params(in_dim, encoder_width, decoder_width, latent_dim)
@@ -59,7 +60,7 @@ class VAE:
     def test1(self, batch_size):
         """ data reconstruction test """
         test_dataloader = DataLoader(
-            self.train_data,
+            self.test_data,
             batch_size,
             shuffle=True,
             drop_last=True,
@@ -70,25 +71,24 @@ class VAE:
         Xground = data.view((batch_size, -1)).to(self.device)
         
         z_mean, z_logstd = self._encoding(Xground)
-        epsi = torch.randn(z_logstd.size()).to(self.device)
-        z_star = z_mean + torch.exp(0.5*z_logstd) * epsi # reparameterize trick
         
+        epsi = torch.randn(z_logstd.size()).to(self.device)
+        z_star = z_mean + torch.exp(0.5*z_logstd) * epsi
+
         Xstar = self._decoding(z_star)
         Xstar = torch.sigmoid(Xstar)
         
         Xstar = Xstar.view(data.size())
         
-#         print(Xstar.size())
-        
         return data, Xstar
         
     def test2(self, batch_size):
         """ distribution transformation test(generate artificial dataset from random noises)"""
-        pass
+        Z = torch.randn((batch_size, self.latent_dim)).to(self.device)
+        Xstar = self._decoding(Z).view((-1,1,28,28))
         
-            
-            
-        
+        return Xstar
+
     def _vae_loss(self, Xground):
         """ compute VAE loss = kl_loss + likelihood_loss """
         
