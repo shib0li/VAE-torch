@@ -1,3 +1,4 @@
+import numpy as np
 from config import opt
 import os
 import torch
@@ -10,7 +11,7 @@ import fire
 from torchvision import transforms as T
 from torchvision.utils import make_grid, save_image
 from PIL import Image
-import numpy as np
+
 
 
 def evaluation(**kwargs):
